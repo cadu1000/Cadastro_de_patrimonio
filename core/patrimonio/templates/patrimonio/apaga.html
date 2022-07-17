@@ -1,0 +1,28 @@
+{% extends "patrimonio/base.html" %}
+
+
+{% block conteudo %}
+  <div>
+    <div>
+      <div>
+        <h5 class="card-title">Exclusão de Patrimonio</h5>
+
+        <p>
+          Você tem certeza que quer excluir o Patrimonio {{ p.nome_objeto }} ?
+        </p>
+
+        <form method="post">
+          {% csrf_token %}
+
+          <hr />
+          <div class="text-right">
+            <a href="{% url 'patrimonio:listagem' %}">
+              Cancelar
+            </a>
+            <button>Excluir</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

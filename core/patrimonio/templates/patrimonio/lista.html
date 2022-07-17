@@ -29,6 +29,12 @@
                     <td>{{ p.valor }}</td>
                     <td>{{ p.dt_cadastro }}</td>
                     <td>{{ p.observacao }}</td>
+                    <td>
+                        
+                        <a href="{% url 'patrimonio:apaga_patrimonio' pk=p.id %}">
+                        Excluir
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
