@@ -19,6 +19,6 @@ class CadastraPatrimonio(CreateView):
     model = Patrimonio
     form_class = InserePatrimonioForm
     success_url = reverse_lazy(  # apos cadastrado, vai para a lista!
-    "patrimonio:lista"
+    "patrimonio:listagem"
 )
 

@@ -1,6 +1,6 @@
 {% extends "patrimonio/base.html" %}
 
-{% load widget_tweaks %}
+<!-- {% load widget_tweaks %} -->
 
 {% block title %}Cadastro de Patrimonio{% endblock %}
 
@@ -24,7 +24,7 @@
                     <div>
                     <span>Nome objeto</span>
                     </div>
-                    {% render_field form.nome_objeto %}
+                    {% render_field form.nome_objeto class+="form-control" %}
                 </div>
 
                 <!-- Etiqueta -->
@@ -32,7 +32,7 @@
                     <div>
                     <span>Etiqueta</span>
                     </div>
-                    {% render_field form.etiqueta %}
+                    {% render_field form.etiqueta class+="form-control" %}
                 </div>
 
                 <!-- Usuario -->
@@ -40,7 +40,7 @@
                     <div>
                     <span>Usuario</span>
                     </div>
-                    {% render_field form.usuario %}
+                    {% render_field form.usuario class+="form-control" %}
                 </div>
 
                 <!-- Setor -->
@@ -48,7 +48,7 @@
                     <div>
                     <span>Setor</span>
                     </div>
-                    {% render_field form.setor %}
+                    {% render_field form.setor class+="form-control" %}
                 </div>
 
                 <!-- Valor -->
@@ -56,12 +56,28 @@
                     <div>
                     <span>Valor</span>
                     </div>
-                    {% render_field form.valor %}
+                    {% render_field form.valor class+="form-control" %}
+                </div>
+
+                <!-- dt_cadastro -->
+                <div>
+                    <div>
+                    <span>Data Cadastro</span>
+                    </div>
+                    {% render_field form.dt_cadastro class+="form-control" %}
+                </div>
+
+                <!-- Observação -->
+                <div>
+                    <div>
+                    <span>Observação</span>
+                    </div>
+                    {% render_field form.observacao class+="form-control" %}
                 </div>
                 <hr>
                 <div class="text-right">
-                    <a href="{% url 'patrimonio:listagem' %}" class="btn btn-outline-primary">Voltar</a>
-                    <button class="btn btn-primary">Enviar</button>
+                    <a href="{% url 'patrimonio:listagem' %}">Voltar</a>
+                    <button>Enviar</button>
                 </div>
             </form>
         </div>
