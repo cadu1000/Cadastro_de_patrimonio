@@ -1,0 +1,73 @@
+{% extends "patrimonio/base.html" %}
+
+{% load widget_tweaks %}
+
+{% block title %}Cadastro de Patrimonio{% endblock %}
+
+{% block conteudo %}
+<div>
+    <div>
+    <div>
+        <div>
+        <div>
+            <h5>Cadastro de Funcionário</h5>
+            <p>
+            Preencha o formulário abaixo para cadastrar
+            um novo <code>Patrimonio</code>.
+            </p>
+            <form method="post">
+            
+                {% csrf_token %}
+
+                <!-- Nome -->
+                <div>
+                    <div>
+                    <span>Nome objeto</span>
+                    </div>
+                    {% render_field form.nome_objeto %}
+                </div>
+
+                <!-- Etiqueta -->
+                <div>
+                    <div>
+                    <span>Etiqueta</span>
+                    </div>
+                    {% render_field form.etiqueta %}
+                </div>
+
+                <!-- Usuario -->
+                <div>
+                    <div>
+                    <span>Usuario</span>
+                    </div>
+                    {% render_field form.usuario %}
+                </div>
+
+                <!-- Setor -->
+                <div>
+                    <div>
+                    <span>Setor</span>
+                    </div>
+                    {% render_field form.setor %}
+                </div>
+
+                <!-- Valor -->
+                <div>
+                    <div>
+                    <span>Valor</span>
+                    </div>
+                    {% render_field form.valor %}
+                </div>
+                <hr>
+                <div class="text-right">
+                    <a href="{% url 'patrimonio:listagem' %}" class="btn btn-outline-primary">Voltar</a>
+                    <button class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
+

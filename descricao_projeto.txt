@@ -1,0 +1,118 @@
+DESCRIÇÃO DO PROJETO PATRIMONIO
+
+Trata-se de um projeto simples, que farei para treinar no Django. 
+
+O objetivo é um sistema para cadastrar objetos de uma empresa, tipo tudo que ela possui. 
+Exemplo: computador, cadeira, mesa, televisor, armario, impressora, etc….
+
+Tabela unica:
+
+patrimonio  # tabela principal
+
+campos patrimonio:
+
+- nome_objeto (30 caracteres, obrigatorio)
+- etiqueta (10, inteiro, obrigatório)    # nr. da etiqueta que o objeto tem que ter
+- usuario (50 caracteres)               # virá da tabela usuario
+- setor (30 caracteres, obrigatorio)     
+- valor (decimal, 2 casas) # nao teria necessidade mas é para treinar
+- dt_cadastro
+- observacao (200 caracteres)
+
+
+tabela Usuario seria outra tabela mas vai ficar para um upgrade futuro...
+#####################################
+campos usuario
+
+- nome (50 caracteres. obrigatorio)
+- cpf (14 caracteres, obrigatorio)
+- telefone (15 caracteres)
+- setor
+
+#####################################
+
+
+Observação: não precisamos configurar o identificador id - ele é
+herdado do objeto models.Model (do qual nosso modelo herdou)!
+
+Ambiente virutal criado: PATRIMONIO-ENV
+
+django-admin startproject core ( onde core é o nome do projeto principal)
+
+/core --> django-admin startapp patrimonio (onde patrimonio é o nome do app que sera criado)
+
+Criar dentro da pasta patrimonio, as pastas:
+
+static/patrimonio/css    
+                 /img
+                 /js
+
+templates/patrimonio
+
+Adcionar 'core' e 'patrimonio' no INSTALlED_APPS do settings.py 
+
+Mover o arquivo models.py para o core
+
+=======================================================================
+Vale ressaltar que o Django usa a arquitetura MVT (movel template view)
+
+No Django, um modelo tem basicamente duas características:
+
+- É uma classe que herda de django.db.models.Model
+- Cada atributo representa um campo da tabela
+Com isso, Django gera automaticamente uma API de Acesso à
+Dados. Essa API facilita e muito nossa vida quando formos gerenciar
+(adicionar, excluir e atualizar) nossos dados.
+=======================================================================
+
+Incluir o nome do app e projeto no settings.py
+
+INSTALLED_APPS = [
+    'coree',
+    'patrimonio'
+]
+
+python manage.py makemigrations core  # o nome do app necessário só na primeira vez
+
+python manage.py migrate core  # o nome do app necessário só na primeira vez
+
+Toda vez que você alterar o seu modelo, não se esqueça
+de executar python manage.py makemigrations e o migrate
+
+
+python manage.py shell  # para "brincar/testar" banco de dados, como por exemplo:
+
+
+from core.models import Patrimonio
+
+p = Patrimonio(
+    nome_objeto='Impressora',
+    etiqueta=8711,
+    usuario='Sharon Stone',
+    setor='Treinamento',
+    valor=890.00,
+    dt_cadastro='2022-06-22',
+    observacao='Impressora Lexmark laserjet preto dupla face'
+)
+
+p.save()
+
+#deletar
+p = Patrimonio.objetos.filter(id=2).first()
+p.delete()
+
+#alterar
+p = Patrimonio.objetos.filter(id=4).first()
+p.usuario = 'Gandalf, o Branco'
+p.save()
+
+
+================================================================================
+mudança de planos..... resolvi minimizar o projeto para que eu assimile melhor
+os conceitos do django, então, vou fazer um mais simples, com uma tabela somente.
+=================================================================================
+
+
+
+
+

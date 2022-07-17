@@ -1,0 +1,44 @@
+{% extends "patrimonio/base.html" %}
+
+    
+    {% block conteudo %}
+
+    <table>
+        <tbody>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">ID</th>
+                <th scope="col">Patrimonio</th>
+                <th scope="col">Etiqueta</th>
+                <th scope="col">Usuário</th>
+                <th scope="col">Setor</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Data Cadastro</th>
+                <th scope="col">Observação</th>
+
+                
+            </tr>
+
+            {% for p in listagem %}
+                <tr>
+                    <td>{{ p.id }}</td>
+                    <td>{{ p.nome_objeto }}</td>
+                    <td>{{ p.etiqueta }}</td>
+                    <td>{{ p.usuario }}</td>
+                    <td>{{ p.setor }}</td>
+                    <td>{{ p.valor }}</td>
+                    <td>{{ p.dt_cadastro }}</td>
+                    <td>{{ p.observacao }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+     
+        
+
+    <div>
+        <a href="/"> <button>HOME</button> </a>
+    </div>
+    
+    {% endblock %}
+
