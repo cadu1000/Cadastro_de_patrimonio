@@ -1,4 +1,4 @@
-from django.views.generic import ListView, TemplateView, CreateView, DeleteView
+from django.views.generic import ListView, TemplateView, CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from core.models import Patrimonio
 from patrimonio.forms import InserePatrimonioForm
@@ -25,5 +25,12 @@ class ApagaPatrimonio(DeleteView):
     template_name = "patrimonio/apaga.html"
     model = Patrimonio
     context_object_name = "apaga_patrimonio"
+    success_url = reverse_lazy("patrimonio:listagem") # pós cadastrado vai para a lista
+
+
+class AtualizaPatrimonio(UpdateView):
+    template_name = "patrimonio/atualiza.html"
+    model = Patrimonio
+    fields = '__all__'  # substitui listar tosos os campos
     success_url = reverse_lazy("patrimonio:listagem") # pós cadastrado vai para a lista
 

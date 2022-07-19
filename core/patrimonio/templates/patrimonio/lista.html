@@ -31,8 +31,12 @@
                     <td>{{ p.observacao }}</td>
                     <td>
                         
+                        <a href="{% url 'patrimonio:atualiza_patrimonio' pk=p.id %}">
+                            <button>Atualiza</button>
+                        </a>
+                        <span> | </span>
                         <a href="{% url 'patrimonio:apaga_patrimonio' pk=p.id %}">
-                        Excluir
+                            <button>Excluir</button>
                         </a>
                     </td>
                 </tr>
