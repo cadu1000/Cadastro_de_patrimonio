@@ -8,6 +8,7 @@ Para manipulacao do DB vou usar alguns recusos do django como:
 - DeleteView
 - CreateView
 - TemplateView
+- UpdateView
 
 
 
