@@ -11,4 +11,8 @@ Para manipulacao do DB vou usar alguns recusos do django como:
 - UpdateView
 
 
+# pip install python-dotenv  
+para ocultar senhas/chaves/qualquer arquivo informação ou arquivo sensível.
+
+
 
