@@ -112,7 +112,7 @@ mudança de planos..... resolvi minimizar o projeto para que eu assimile melhor
 os conceitos do django, então, vou fazer um mais simples, com uma tabela somente.
 =================================================================================
 
-
+.
 
 
 
