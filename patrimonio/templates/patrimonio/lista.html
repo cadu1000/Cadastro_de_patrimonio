@@ -31,13 +31,13 @@
                     <td>{{ p.observacao }}</td>
                     <td>
                         <a href="{% url 'patrimonio:atualiza_patrimonio' pk=p.id %}">
-                            <button type="button" class="btn btn-warning">Atualiza</button>
+                            <button type="button" class="btn btn-warning border-dark">Atualiza</button>
                         </a>
                     </td>
                     <td>
                         
                         <a href="{% url 'patrimonio:apaga_patrimonio' pk=p.id %}">
-                            <button type="button" class="btn btn-danger">Excluir</button>
+                            <button type="button" class="btn btn-danger border-dark">Excluir</button>
                         </a>    
                     </td>
                 </tr>
