@@ -2,11 +2,11 @@
 
     
     {% block conteudo %}
-
-    <table>
-        <tbody>
+    <div class="container mt-5">
+    <table class="table table-hover table-striped">
+        <thead>
             <tr>
-                <th scope="col"></th>
+                <!--<th scope="col"></th> -->
                 <th scope="col">ID</th>
                 <th scope="col">Patrimonio</th>
                 <th scope="col">Etiqueta</th>
@@ -15,13 +15,13 @@
                 <th scope="col">Valor</th>
                 <th scope="col">Data Cadastro</th>
                 <th scope="col">Observação</th>
-
-                
             </tr>
-
+        </thead>
+        <tbody>
+            
             {% for p in listagem %}
                 <tr>
-                    <td>{{ p.id }}</td>
+                    <td scope="row">{{ p.id }}</td>
                     <td>{{ p.nome_objeto }}</td>
                     <td>{{ p.etiqueta }}</td>
                     <td>{{ p.usuario }}</td>
@@ -30,25 +30,24 @@
                     <td>{{ p.dt_cadastro }}</td>
                     <td>{{ p.observacao }}</td>
                     <td>
-                        
                         <a href="{% url 'patrimonio:atualiza_patrimonio' pk=p.id %}">
-                            <button>Atualiza</button>
+                            <button type="button" class="btn btn-warning">Atualiza</button>
                         </a>
-                        <span> | </span>
+                    </td>
+                    <td>
+                        
                         <a href="{% url 'patrimonio:apaga_patrimonio' pk=p.id %}">
-                            <button>Excluir</button>
-                        </a>
+                            <button type="button" class="btn btn-danger">Excluir</button>
+                        </a>    
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-     
+    </div> 
         
 
-    <div>
-        <a href="/"> <button>HOME</button> </a>
-    </div>
+   
     
     {% endblock %}
 

@@ -5,13 +5,15 @@
 {% block title %}Cadastro de Patrimonio{% endblock %}
 
 {% block conteudo %}
-<div>
-    <div>
-    <div>
-        <div>
-        <div>
-            <h5>Cadastro de Patrimônio</h5>
-            <p>
+
+
+<div class="container mt-2">
+    <div  class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="card">
+        <div class="card-body">
+         <h5 class="card-title">Cadastro de Patrimônio</h5>
+            <p class="card-text">
             Preencha o formulário abaixo para cadastrar
             um novo <code>Patrimonio</code>.
             </p>
@@ -22,17 +24,18 @@
                 <!-- Nome -->
                 <div>
                     <div>
-                    <span>Nome objeto</span>
+                    <label>Patrimonio</label>
                     </div>
-                    {% render_field form.nome_objeto class+="form-control" %}
+                    {% render_field form.nome_objeto %}
                 </div>
+                
 
                 <!-- Etiqueta -->
                 <div>
                     <div>
                     <span>Etiqueta</span>
                     </div>
-                    {% render_field form.etiqueta class+="form-control" %}
+                    {% render_field form.etiqueta %}
                 </div>
 
                 <!-- Usuario -->
@@ -40,7 +43,7 @@
                     <div>
                     <span>Usuario</span>
                     </div>
-                    {% render_field form.usuario class+="form-control" %}
+                    {% render_field form.usuario %}
                 </div>
 
                 <!-- Setor -->
@@ -48,7 +51,7 @@
                     <div>
                     <span>Setor</span>
                     </div>
-                    {% render_field form.setor class+="form-control" %}
+                    {% render_field form.setor %}
                 </div>
 
                 <!-- Valor -->
@@ -56,7 +59,7 @@
                     <div>
                     <span>Valor</span>
                     </div>
-                    {% render_field form.valor class+="form-control" %}
+                    {% render_field form.valor %}
                 </div>
 
                 <!-- dt_cadastro -->
@@ -64,7 +67,7 @@
                     <div>
                     <span>Data Cadastro</span>
                     </div>
-                    {% render_field form.dt_cadastro class+="form-control" %}
+                    {% render_field form.dt_cadastro %}
                 </div>
 
                 <!-- Observação -->
@@ -72,12 +75,12 @@
                     <div>
                     <span>Observação</span>
                     </div>
-                    {% render_field form.observacao class+="form-control" %}
+                    {% render_field form.observacao %}
                 </div>
                 <hr>
-                <div class="text-right">
-                    <a href="{% url 'patrimonio:listagem' %}">Voltar</a>
-                    <button>Enviar</button>
+                <div>
+                    <a href="{% url 'patrimonio:listagem' %}"><button type="button" class="btn btn-primary">Voltar</button></a>
+                    <button type="submit" class="btn btn-success">Enviar</button>
                 </div>
             </form>
         </div>
@@ -85,5 +88,6 @@
     </div>
     </div>
 </div>
+
 {% endblock %}
 

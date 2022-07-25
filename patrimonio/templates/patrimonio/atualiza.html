@@ -5,7 +5,7 @@
 {% block title %}Atualiza Patrimonio{% endblock %}
 
 {% block conteudo %}
-<div>
+<div class="container mt-5">
     <div>
     <div>
         <div>
@@ -75,8 +75,8 @@
                 </div>
                 <hr>
                 <div class="text-right">
-                    <a href="{% url 'patrimonio:listagem' %}">Voltar</a>
-                    <button>Enviar</button>
+                    <a href="{% url 'patrimonio:listagem' %}"><button class="btn btn-primary">Voltar</button></a>
+                    <button type="submit" class="btn btn-success">Enviar</button>
                 </div>
             </form>
         </div>

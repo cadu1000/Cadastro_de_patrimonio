@@ -4,8 +4,9 @@
 {% block title %}Página Inicial{% endblock %}
 
 <!-- Bloco de conteúdo da nossa página -->
-{% block conteudo %}
 
+
+<!----
 <h2> BEM VINDO AO SISTEMA </h2>
 
 <h1> CONTROLE DE PATRIMÔNIO </h1>
@@ -15,8 +16,51 @@
 
 
 <div id="botao-index">
-    <a href="/lista"><button>LISTA TODOS</button></a>
-    <a href="/cadastra"><button>CADASTRAR NOVO</button></a>
+    <a href="/lista"><button type="button" class="btn btn-primary">Listar Todos</button>
+
+    <a href="/cadastra"><button type="button" class="btn btn-success">Cadastrar</button>
+
 </div>
+
+-->
+
+{% block conteudo %}
+
+
+<div class="container mt-6">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cadastrar Patrimonio</h5>
+          <p class="card-text">
+            Cadastre aqui um novo <code>Patrimonio</code>.
+          </p>
+          <a href="/cadastra"
+             class="btn btn-danger">
+            Novo Patrimonio
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lista de Patrimonios</h5>
+          <p class="card-text">
+            Veja aqui a lista de <code>Patrimonios</code> cadastrados.
+          </p>
+          <a href="/lista"
+             class="btn btn-warning">
+            Vá para Lista
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 {% endblock %}
 
